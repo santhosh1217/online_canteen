@@ -1,0 +1,65 @@
+{% extends 'index.html'%}
+
+{%block title %}home{% endblock %}
+{%block content %}
+<style>
+    .container{
+        width:60%;
+        height:15vh;
+        align-items:right;
+        margin:0 auto;
+        }
+    .swiper{
+    width: 80%;
+    height: fit-content;
+    }
+    .swiper-slide img{
+    width: 100%;
+    }
+    .swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: #fff;
+    }
+    .swiper .swiper-pagination-bullet-active{
+    background:black;
+    }
+</style>
+    
+<div class="container">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="https://smweddingplanners.com/wp-content/uploads/2018/01/best-south-indian-food-wedding-breakfast.jpg"></div>
+              <div class="swiper-slide"><img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/03/snacks-recipes-fb.jpg"></div>
+              <div class="swiper-slide"><img src="https://www.tamilnadutourism.tn.gov.in/img/pages/medium-desktop/cuisines-of-the-tamil-land-1656595840_2597908b981288f3634b.webp"></div>
+              <div class="swiper-slide"><img src="https://koreabyme.com/wp-content/uploads/2020/06/1781-1024x683.jpg"></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+          </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay:{
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+loop: true,
+pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+</script>
+{% endblock content%}

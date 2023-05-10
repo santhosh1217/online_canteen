@@ -1,0 +1,27 @@
+{% extends 'index.html'%}
+
+{%block title %}home{% endblock %}
+{%block content %}
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 p-4 bg-dark text-light text-center">
+            <h3>Signup</h3>
+            <form method="POST" action="signup">
+                {% csrf_token %}<br>
+                <label> Username</label>         
+                <input type="text" name="Username"/> <br><br><br>
+                <label> Password</label>         
+                <input type="password" name="Password"/><br><br><br>
+                <label>Confirm Password</label>        
+                <input type="password" name="ConfPassword"/><br><br><br>
+                <input type="submit"/> 
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+ </div>
+{% endblock%}

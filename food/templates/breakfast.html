@@ -1,0 +1,98 @@
+{% extends 'index.html'%}
+{% load static%}
+
+{%block title %}home{% endblock %}
+{%block content %}
+
+<style>
+    .title{
+        margin:50px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .picture{
+        width:300px;
+        border-radius:50%;
+        height:200px;
+    }
+    .pt-3{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .price{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .orders{
+        position: relative;
+        top: 100px;
+    }
+   
+</style>
+
+
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-8 text-center">
+            <h2 class="title" id="title" >{{title}}</h2>
+            <div class="row">
+                {% for breakfast in breakfasts %}
+
+                <div class="col-md-6 p-4">
+                    <img  class="picture" src="{{breakfast.bimage.url}}"> 
+                    <h3 class="pt-3" id="name{{breakfast.id}}">{{breakfast.name}}</h3>
+                    <div class="form-check-inline" id="price{{breakfast.id}}" value="{{ breakfast.price}}">
+                        {{breakfast.price}}
+                    </div>
+ <div>
+                    <input type="number" id="quantity" placeholder = "quantity" value="1" class="btn-info mt-3" >
+                    </div>
+                    <div>
+                    <button class="btn-info mt-3"   onclick="addBreakfast('{{breakfast.id}}')" >"Add to Cart"</button>
+                    </div>
+
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script>
+
+
+function addBreakfast(bid)
+{
+    
+    
+    let x = document.getElementById("login").innerHTML
+   
+
+
+    if(x == "Login")
+    {
+        alert("Must Login");
+        window.location.href="http://127.0.0.1:8000/login";
+    }
+    else
+    {
+
+	
+	
+    breakfastId = 'name' + bid;
+    var name = document.getElementById(breakfastId).innerHTML;
+    var c = window.location.pathname;
+    var p = c.split("/");
+    var lp = p[p.length-1];
+    var radio = 'price'+bid;
+    var quantity = document.getElementById("quantity").value
+    var price = document.getElementById(radio).innerHTML;
+    window.location.href = (lp+"/addcart/"+name+"/"+parseInt(price)+"/"+quantity)
+
+	
+    }
+
+}
+</script>
+<script src="{% static 'js/order.js' %}"></script>
+{% endblock %}

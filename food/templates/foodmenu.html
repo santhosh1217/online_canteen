@@ -1,0 +1,181 @@
+{% extends 'index.html'%}
+
+{%block title %}home{% endblock %}
+{%block content %}
+<style>
+    .menu{
+        padding: 25px 0 25px 0;
+    }
+    .section{
+        padding: 25px 0 25px 0;
+        text-align: center;
+        font-size: 4.3rem;
+        font-family: 'Times New Roman', Times, serif;
+        -webkit-text-fill-color:#324d0d;
+    }
+    .menu_row{
+        display:flex;
+        padding: 0 80px 0 20px;
+    }
+    .menu_col{
+        box-shadow: 2px 2px 2px #bbb;
+        border: 1px solid #bbb;
+        background-color: #fff;
+        margin: 2px;
+        
+       
+    }
+    .menu_col h2{
+        background-color:rgb(172, 207, 101);
+        color:black;
+        text-align: center;
+        padding: 2px;
+        font-family: italic;
+    }
+    .image{
+        width:275px;
+        height:200px;
+        border-radius: 50%;
+        padding: 3px;
+        border: 2px solid orange;
+    }
+    .image img{
+        width:100%;
+        height:100%;
+        border-radius: 50%;
+        object-fit:cover;
+    }
+    .box{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin: 5px;
+}
+
+
+
+</style>
+
+<div class="menu">
+    <h1 class="section" > MENU </h1>
+
+<div class="menu_row">
+<!--breakfast-->
+        <div class="menu_col">
+            <h2>BREAKFAST</h2>
+                <div class="box">
+                    <div class="image">
+                        <a href="foodmenu/breakfast">
+                      
+                        <img src="https://sukhis.com/app/uploads/2019/09/Indian-Breakfast.jpg">
+                        </a>
+                    </div>
+                 
+                  
+                     
+                    </div>
+                </div>
+
+<!--fresh juice-->
+        <div class="menu_col">
+            <h2>FRESH JUICE</h2>
+            <div class="box">
+                <div class="image">
+                    <a href="foodmenu/freshjuice">
+                    <img src="https://img.freepik.com/premium-photo/variety-fruit-juices-fruit-smoothies_434193-3565.jpg">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<!--chat items-->
+        <div class="menu_col">
+            <h2>CHAT ITEMS</h2>
+            <div class="box">
+                <div class="image">
+                     
+                    <a href="foodmenu/chatitems">
+                    <img src="https://www.eventfaqs.com/Uploads/In%20Story%20Images/IMG_1095.JPG">    </a>
+                </div>
+            
+                    
+            
+               
+            </div>
+        </div>
+
+<!--fast food-->
+        <div class="menu_col">
+            <h2>FAST FOOD</h2>
+            <div class="box">
+                <div class="image">
+                    <a href="foodmenu/fastfood">
+                    <img src="https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/content9555.jpg">   </a>
+                  
+                </div>
+                  
+             
+             
+            </div>
+        </div>
+</div>
+
+
+
+<div class="menu_row">
+<!--lunch-->
+        <div class="menu_col">
+            <h2>LUNCH</h2>
+            <div class="box">
+                <div class="image">
+                    <a href="foodmenu/lunch">
+                    <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/Tamilnadu.JPG"></a>
+                </div>
+           
+               
+                 
+            
+                
+            </div>
+        </div>
+
+<!--daily special-->
+        <div class="menu_col">
+            <h2>DAILY SPECIALS</h2>
+            <div class="box">
+                <div class="image">
+                    <a href="foodmenu/dailyspecial">
+                    <img src="https://www.shutterstock.com/image-vector/daily-deal-grunge-rubber-stamp-260nw-213653254.jpg"> </a>
+                </div>
+             
+                 
+                    
+               
+               
+            </div>
+        </div>
+        
+<!--combo offers-->
+
+        <div class="menu_col">
+            <h2>COMBO OFFERS</h2>
+            <div class="box">
+                <div class="image">
+                    
+                    <a href="foodmenu/combo">
+                    <img src="https://t4.ftcdn.net/jpg/04/22/89/03/360_F_422890388_eTTj0bKWJ1LWeN3DSyl8un08AE3jRsOv.jpg">
+                </a>
+               
+                </div>
+               
+                   
+             
+            </div>
+        </div>
+</div>
+
+
+
+</div>
+{% endblock content%}
